@@ -126,12 +126,14 @@ function sendMail() {
 
     if (!email || !name || !message) {
         console.error('One or more fields are empty.');
-
-        const mailtoLink = `mailto:${`tolgysoftware@gmail.com`}?subject=${encodeURIComponent(message)}&body=${encodeURIComponent(name)}`;
-        window.location.href = mailtoLink;
-
         return;
     }
 
+    else {
+        const mailtoLink = `mailto:${`tolgysoftware@gmail.com`}?subject=${encodeURIComponent(message)}&body=${encodeURIComponent(name)}`;
+        document.location = mailtoLink;
+        //  window.location.href = mailtoLink;
+    }
 
 }
+
