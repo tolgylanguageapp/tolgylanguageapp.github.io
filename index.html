@@ -31,7 +31,7 @@
   </head>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJW9ELFG6L"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJW9ELFG6L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -40,9 +40,17 @@
     gtag("js", new Date());
 
     gtag("config", "G-EJW9ELFG6L");
-  </script>
+  </script> -->
 
   <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <div
+      id="cookie-banner"
+      style="position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; padding: 20px; text-align: center; z-index: 1000"
+    >
+      This site uses cookies for analytics and personalized content. By continuing to browse this site, you agree to this use.&nbsp
+      <a href="privacy-policy.html">Learn more</a>
+      <button onclick="acceptCookies()" class="btn-privacy-policy rounded-pill">Accept</button>
+    </div>
     <div class="container-xxl bg-white p-0">
       <!-- Spinner Start -->
       <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -54,7 +62,7 @@
 
       <!-- Navbar & Hero Start -->
       <div class="container-xxl position-relative p-0" id="home">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-4 py-lg-0">
           <a href="" class="navbar-brand p-0">
             <h1 class="m-0 logo-font fw-lighter">TolgyApp</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
@@ -65,8 +73,9 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
               <a href="#home" class="nav-item nav-link active">Home</a>
-              <a href="#about" class="nav-item nav-link">About</a>
               <a href="#feature" class="nav-item nav-link">Features</a>
+              <a href="#about" class="nav-item nav-link">About</a>
+
               <a href="#review" class="nav-item nav-link">Review</a>
               <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
@@ -81,10 +90,21 @@
           <div class="container px-lg-5">
             <div class="row g-5">
               <div class="col-lg-8 text-center text-lg-start">
-                <h1 class="text-white mb-4 animated slideInDown">Your Path to Effortless Language Mastery</h1>
-                <p class="text-white pb-3 animated slideInDown fs-5">
-                  Welcome to Tolgy, your personalized language learning app! <br />
-                  Tolgy is now in beta and will soon be available on Google Play. Be among the first to try it out!
+                <h1 class="text-white mb-4 animated slideInDown">Learn effectively, <coloredText>reach your goals,</coloredText> be proud of yourself</h1>
+                <p class="text-white animated slideInDown fs-7">
+                  <!-- Welcome to Tolgy, your personalized language learning app! <br /> -->
+                  Your Swiss Army knife
+                  <img
+                    src="./img/swiss-army-knife.png"
+                    alt=""
+                    style="height: 1.5rem; width: 1.5srem; -webkit-transform: rotate(45deg); transform: rotate(45deg)"
+                  />
+                  &nbspfor learning new languages
+                </p>
+                <p class="text-white pb-3 mb-4 animated slideInDown fs-7">
+                  With personalized lessons, daily goals, and engaging exercises, you will be a master
+                  <img src="./img/master.png" alt="" style="height: 1.5rem" />
+                  &nbspof a new language
                 </p>
 
                 <!-- <p class="text-white pb-3 animated slideInDown fs-5">Tolgy is now in beta and will soon be available on Google Play. Be among the first to try it out!</p> -->
@@ -92,18 +112,20 @@
                 <!-- Form -->
                 <form class="mb-3">
                   <div class="row gx-2 gy-2 gy-sm-0">
-                    <div class="col-12 col-sm">
-                      <input type="text" class="form-control form-control-lg rounded-pill fs-6" id="email" placeholder="Your email" />
+                    <div class="col-12 col-sm mb-2">
+                      <input type="text" class="form-control form-control-md rounded-pill py-sm-3 h-100 pd-custom" id="email" placeholder="Your email" />
                       <label for="email" class="sr-only">Your email</label>
                     </div>
                     <div class="col-12 col-sm-auto">
-                      <button class="btn btn-primary-gradient rounded-pill w-100 animated slideInRight fs-5" type="button">I'm in</button>
+                      <button class="btn btn-secondary rounded-pill w-100 animated slideInRight px-sm-5 py-sm-3 pd-custom" type="button">
+                        I'm waiting for it
+                      </button>
                     </div>
                     <!-- <div class="col-12 col-sm-auto">
                         <button class="btn btn-light rounded-pill w-100 animated slideInRight fs-5" type="button">Read More</button>
                     </div> -->
                   </div>
-                  <div id="emailHelp" class="form-text text-white mt-2">We'll never share your email with anyone else</div>
+                  <div id="emailHelp" class="form-text text-white mt-2 mb-5">We'll never share your email with anyone else</div>
                 </form>
               </div>
               <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
@@ -121,24 +143,139 @@
       </div>
       <!-- Navbar & Hero End -->
 
+      <!-- Features Start -->
+      <div class="container-xxl py-5" id="feature">
+        <div class="container py-5 px-lg-5">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">Tolgy Features</h5>
+            <h1 class="mb-5">Why Join Our Beta?</h1>
+          </div>
+
+          <div class="row g-4 align-items-center justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="feature-item bg-light rounded p-1" style="height: 7rem">
+                <div class="d-flex align-items-center px-3 py-3">
+                  <div style="width: auto">
+                    <div
+                      class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle py-3 px-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="py-3 px-3">Personalized Learning Experience</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="feature-item bg-light rounded p-1" style="height: 7rem">
+                <div class="d-flex align-items-center px-3 py-3">
+                  <div style="width: auto">
+                    <div
+                      class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle py-3 px-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="py-3 px-3">Absolutely Free</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="feature-item bg-light rounded p-1">
+                <div class="d-flex align-items-center px-3 py-3" style="height: 7rem">
+                  <div style="width: auto">
+                    <div
+                      class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle py-3 px-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="py-3 px-3">Exclusive Community Access</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="feature-item bg-light rounded p-1">
+                <div class="d-flex align-items-center px-3 py-3" style="height: 7rem">
+                  <div style="width: auto">
+                    <div
+                      class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle py-3 px-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="py-3 px-3">Learn multiple languages in a single app</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="feature-item bg-light rounded p-1">
+                <div class="d-flex align-items-center px-3 py-3" style="height: 7rem">
+                  <div style="width: auto">
+                    <div
+                      class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle py-3 px-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="py-3 px-3">Create your own flashcard decks</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="feature-item bg-light rounded p-1">
+                <div class="d-flex align-items-center px-3 py-3" style="height: 7rem">
+                  <div style="width: auto">
+                    <div
+                      class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle py-3 px-3"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="py-3 px-3">Chat with an AI assistant</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Features End -->
+
       <!-- About Start -->
-      <div class="container-xxl py-5" id="about">
+      <div class="container-xxl py-3" id="about">
         <div class="container py-5 px-lg-5">
           <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-              <h5 class="text-primary-gradient fw-medium">About Tolgy</h5>
               <h1 class="mb-4">Be the First to Experience Tolgy</h1>
-              <p class="mb-4">
-                Tolgy is your new go-to language app, designed to make learning effortless and speaking seamless. With personalized lessons, daily goals, and
-                engaging exercises, it's perfect for anyone looking to master a new language
+              <p class="mb-4" style="font-size: 1.25rem">
+                With Tolgy, you <coloredText>dive right into conversations</coloredText> from day one. Personalized lessons and engaging exercises are waiting
+                for you. Level up your career, <coloredText>give your brain a workout</coloredText>, conquer as many languages as you like!
               </p>
               <div class="row g-4 mb-4">
                 <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                   <div class="d-flex">
                     <i class="fa fa-cogs fa-2x text-primary-gradient flex-shrink-0 mt-1"></i>
                     <div class="ms-3">
-                      <h2 class="mb-0" data-toggle="counter-up">1234</h2>
-                      <p class="text-primary-gradient mb-0">Active Install</p>
+                      <h2 class="mb-0" data-toggle="counter-up">10000</h2>
+                      <p class="text-primary-gradient mb-0">Flashcards to learn</p>
                     </div>
                   </div>
                 </div>
@@ -146,13 +283,13 @@
                   <div class="d-flex">
                     <i class="fa fa-comments fa-2x text-secondary-gradient flex-shrink-0 mt-1"></i>
                     <div class="ms-3">
-                      <h2 class="mb-0" data-toggle="counter-up">10234</h2>
-                      <p class="text-secondary-gradient mb-0">Words to learn</p>
+                      <h2 class="mb-0" data-toggle="counter-up">12</h2>
+                      <p class="text-secondary-gradient mb-0">Languages to master</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <a href="#contact" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3 btn-contact">Join now</a>
+              <a href="#contact" class="btn btn-secondary py-sm-3 px-4 px-sm-5 rounded-pill mt-3 btn-contact">Join now</a>
             </div>
             <div class="col-lg-6">
               <img class="img-fluid wow fadeInUp" data-wow-delay="0.5s" src="img/about.png" />
@@ -162,95 +299,8 @@
       </div>
       <!-- About End -->
 
-      <!-- Features Start -->
-      <div class="container-xxl py-5" id="feature">
-        <div class="container py-5 px-lg-5">
-          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h5 class="text-primary-gradient fw-medium">Tolgy Features</h5>
-            <h1 class="mb-5">Why Join Our Beta?</h1>
-          </div>
-          <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="feature-item bg-light rounded p-4 h-100">
-                <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px">
-                  <i class="fa fa-eye text-white fs-4"></i>
-                </div>
-                <h5 class="mb-3">Personalized Learning Experience</h5>
-                <p class="m-0">Experience tailored lessons and adaptive learning algorithms that adjust to your learning style and goals in real-time</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="feature-item bg-light rounded p-4 h-100">
-                <div
-                  class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4"
-                  style="width: 60px; height: 60px"
-                >
-                  <i class="fa fa-layer-group text-white fs-4"></i>
-                </div>
-                <h5 class="mb-3">Immersive Content</h5>
-                <p class="m-0">
-                  Dive into our engaging multimedia content, from interactive exercises to cultural insights, all designed to make your learning journey fun and
-                  effective
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="feature-item bg-light rounded p-4 h-100">
-                <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px">
-                  <i class="fa fa-edit text-white fs-4"></i>
-                </div>
-                <h5 class="mb-3">Absolutely Free</h5>
-                <p class="m-0">
-                  Enjoy all the amazing features of Tolgy for free. The only thing we ask is that you watch one short ad per day. It's a small price for a huge
-                  advantage!
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="feature-item bg-light rounded p-4 h-100">
-                <div
-                  class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4"
-                  style="width: 60px; height: 60px"
-                >
-                  <i class="fa fa-shield-alt text-white fs-4"></i>
-                </div>
-                <h5 class="mb-3">Exclusive Community Access</h5>
-                <p class="m-0">
-                  Join a community of early adopters, provide feedback, and shape the future of Tolgy. Your insights are crucial in making Tolgy the best it can
-                  be
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="feature-item bg-light rounded p-4 h-100">
-                <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px">
-                  <i class="fa fa-cloud text-white fs-4"></i>
-                </div>
-                <h5 class="mb-3">Reading and Speaking Exercises</h5>
-                <p class="m-0">
-                  Improve your reading and speaking skills with a variety of interactive exercises designed to enhance your comprehension and pronunciation
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div class="feature-item bg-light rounded p-4 h-100">
-                <div
-                  class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4"
-                  style="width: 60px; height: 60px"
-                >
-                  <i class="fa fa-mobile-alt text-white fs-4"></i>
-                </div>
-                <h5 class="mb-3">Vocabulary Practice with Flashcards</h5>
-                <p class="m-0">Expand your vocabulary effortlessly with our flashcard feature. Review words and phrases regularly to make sure they stick</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Features End -->
-
       <!-- Screenshot Start -->
-      <div class="container-xxl py-5">
+      <!-- <div class="container-xxl py-5">
         <div class="container py-5 px-lg-5">
           <div class="row g-5 align-items-center">
             <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
@@ -263,23 +313,25 @@
               <p><i class="fa fa-check text-primary-gradient me-3"></i>Diam dolor diam ipsum et tempor sit</p>
               <p><i class="fa fa-check text-primary-gradient me-3"></i>Aliqu diam amet diam et eos labore</p>
               <p class="mb-4"><i class="fa fa-check text-primary-gradient me-3"></i>Clita erat ipsum et lorem et sit</p>
-              <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Join now</a>
+              <a href="" class="btn btn-secondary py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Join now</a>
             </div>
             <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
-              <div class="owl-carousel screenshot-carousel">
-                <img class="img-fluid" src="img/screenshot-1.png" alt="" />
-                <img class="img-fluid" src="img/screenshot-2.png" alt="" />
-                <img class="img-fluid" src="img/screenshot-3.png" alt="" />
-                <img class="img-fluid" src="img/screenshot-4.png" alt="" />
-                <img class="img-fluid" src="img/screenshot-5.png" alt="" />
+              <div class="sticky">
+                <div class="owl-carousel screenshot-carousel">
+                  <img class="img-fluid" src="img/screenshot-1.png" alt="" />
+                  <img class="img-fluid" src="img/screenshot-2.png" alt="" />
+                  <img class="img-fluid" src="img/screenshot-3.png" alt="" />
+                  <img class="img-fluid" src="img/screenshot-4.png" alt="" />
+                  <img class="img-fluid" src="img/screenshot-5.png" alt="" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Screenshot End -->
 
-      <!-- Process Start -->
+      <!-- 3 Main Powers Start -->
       <div class="container-xxl py-5">
         <div class="container py-5 px-lg-5">
           <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -295,9 +347,10 @@
                 >
                   <i class="fa fa-cog fa-3x text-white"></i>
                 </div>
-                <h5 class="mt-4 mb-3">Free For Everyone</h5>
+                <h5 class="mt-4 mb-3">Free For Everyone Forever</h5>
                 <p class="mb-0">
-                  Learn languages with Tolgy at no cost. You can access all features by watching a short ad each day, making learning accessible to everyone.
+                  Learn languages with Tolgy at <coloredText>no cost</coloredText>. You can access all features by watching a short ad each day, making
+                  <coloredText>learning accessible to everyone.</coloredText>
                 </p>
               </div>
             </div>
@@ -311,8 +364,8 @@
                 </div>
                 <h5 class="mt-4 mb-3">AI-Powered Content</h5>
                 <p class="mb-0">
-                  Experience the future of language education with Tolgy's AI-driven content. You'll always encounter content that matches your level and
-                  challenges you to improve
+                  Experience the future of language education with Tolgy's <coloredText>AI-driven content.</coloredText> You'll always encounter content that
+                  <coloredText>matches your level</coloredText> and challenges you to improve
                 </p>
               </div>
             </div>
@@ -326,15 +379,15 @@
                 </div>
                 <h5 class="mt-4 mb-3">All Language Levels Coverage</h5>
                 <p class="mb-0">
-                  Whether you're a beginner or advanced learner, Tolgy supports all levels from A1 to C2. Start from scratch or pick up where you left off, with
-                  lessons designed to help you improve steadily
+                  Tolgy supports all language levels <coloredText>from beginner to advanced learner.</coloredText> Start from scratch or pick up where you left
+                  off, with lessons designed to help you <coloredText>improve steadily</coloredText>
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Process Start -->
+      <!-- 3 Main Powers Start -->
 
       <!-- Download Start -->
       <div class="container-xxl py-5">
@@ -488,80 +541,81 @@
       <!-- Contact End -->
 
       <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-      <div class="row justify-content-center" id="contact">
-        <form
-          action="https://app.convertkit.com/forms/6765244/subscriptions"
-          class="seva-form formkit-form"
-          method="post"
-          data-sv-form="6765244"
-          data-uid="83e41c457b"
-          data-format="inline"
-          data-version="5"
-          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-          min-width="400 500 600 700 800"
-          style="background-color: rgb(249, 250, 251); border-radius: 4px"
-        >
-          <div class="formkit-background" style="opacity: 0.2"></div>
-          <div data-style="minimal">
-            <div class="formkit-header" data-element="header" style="color: rgb(77, 77, 77); font-size: 27px; font-weight: 700"><h2>Be in the Know!</h2></div>
-            <div class="formkit-subheader" data-element="subheader" style="color: rgb(104, 104, 104); font-size: 16px">
-              <h2 class="text-primary-gradient fw-medium">Stay updated on Tolgy's launch!</h2>
-              <p>Your feedback will help us perfect the app and create the best language learning experience</p>
-              <p>​</p>
-            </div>
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-            <div data-element="fields" data-stacked="true" class="seva-fields formkit-fields">
-              <div class="formkit-field">
-                <input
-                  class="formkit-input"
-                  aria-label="Add your name for a personal touch"
-                  name="fields[first_name]"
-                  placeholder="Add your name for a personal touch"
-                  type="text"
-                  style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 30px; font-weight: 400"
-                />
-              </div>
-              <div class="formkit-field">
-                <input
-                  class="formkit-input"
-                  name="email_address"
-                  aria-label="Email Address"
-                  placeholder="Email Address"
-                  required=""
-                  type="email"
-                  style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 30px; font-weight: 400"
-                />
-              </div>
-              <button
-                data-element="submit"
-                class="formkit-submit formkit-submit"
-                style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 30px; font-weight: 700"
-              >
-                <div class="formkit-spinner">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-                <span class="">Join Tolgy Fam</span>
-              </button>
-            </div>
-            <div class="formkit-guarantee" data-element="guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400">
-              <p>We won't send you spam. Unsubscribe at any time.</p>
-            </div>
-            <div class="formkit-powered-by-convertkit-container">
-              <a
-                href="https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"
-                data-element="powered-by"
-                class="formkit-powered-by-convertkit"
-                data-variant="dark"
-                target="_blank"
-                rel="nofollow"
-                >Built with ConvertKit</a
-              >
-            </div>
+
+      <form
+        id="contact"
+        action="https://app.convertkit.com/forms/6765244/subscriptions"
+        class="seva-form formkit-form"
+        method="post"
+        data-sv-form="6765244"
+        data-uid="83e41c457b"
+        data-format="inline"
+        data-version="5"
+        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":true},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+        min-width="400 500 600 700 800"
+        style="background-color: rgb(255, 255, 255); border-radius: 4px; border: none; margin: auto; margin: top 1rem"
+      >
+        <div class="formkit-background" style="opacity: 1"></div>
+        <div data-style="minimal">
+          <div class="formkit-header" data-element="header" style="color: rgb(26, 32, 44); font-size: 27px; font-weight: 700"><h2>Be in the Know!</h2></div>
+          <div class="formkit-subheader" data-element="subheader" style="color: rgb(113, 128, 150); font-size: 16px">
+            <h3 style="font-size: 1.5rem">Stay updated on Tolgy's launch!</h3>
+            <p style="font-size: 1.25rem">Your feedback will help us perfect the app and create the best language learning experience</p>
+            <p>​</p>
           </div>
-        </form>
-      </div>
+          <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+          <div data-element="fields" data-stacked="true" class="seva-fields formkit-fields">
+            <div class="formkit-field">
+              <input
+                class="formkit-input"
+                aria-label="Add your name for a personal touch"
+                name="fields[first_name]"
+                placeholder="Add your name for a personal touch"
+                type="text"
+                style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 30px; font-weight: 400"
+              />
+            </div>
+            <div class="formkit-field">
+              <input
+                class="formkit-input"
+                name="email_address"
+                aria-label="Email Address"
+                placeholder="Email Address"
+                required=""
+                type="email"
+                style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 30px; font-weight: 400"
+              />
+            </div>
+            <div class="formkit-field">
+              <div role="button" tabindex="0">
+                <fieldset data-group="checkboxes" class="formkit-7465" type="Custom" order="2" save_as="Tag" group="field"></fieldset>
+              </div>
+            </div>
+            <button data-element="submit" class="formkit-submit formkit-submit">
+              <div class="formkit-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <span class="btn-secondary rounded-pill">Join Tolgy Fam</span>
+            </button>
+          </div>
+          <div class="formkit-guarantee" data-element="guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400">
+            <p>We won't send you spam. Unsubscribe at any time.</p>
+          </div>
+          <div class="formkit-powered-by-convertkit-container">
+            <a
+              href="https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"
+              data-element="powered-by"
+              class="formkit-powered-by-convertkit"
+              data-variant="dark"
+              target="_blank"
+              rel="nofollow"
+              >Built with ConvertKit</a
+            >
+          </div>
+        </div>
+      </form>
 
       <!-- Footer Start -->
       <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -569,18 +623,16 @@
           <div class="row g-5">
             <div class="col-md-6 col-lg-3">
               <div class="d-flex pt-2">
-                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-patreon"></i></a>
+                <a class="btn btn-outline-light btn-social px-1" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social px-2" href=""><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-social px-3" href=""><i class="fab fa-patreon"></i></a>
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
-              <h4 class="text-white mb-4">Quick Links</h4>
               <a class="btn btn-link" href="">About Us</a>
               <a class="btn btn-link" href="">Contact Us</a>
-              <a class="btn btn-link" href="">Privacy Policy</a>
-              <a class="btn btn-link" href="">Terms & Condition</a>
-              <a class="btn btn-link" href="">Cookies</a>
+              <a class="btn btn-link" href="privacy-policy.html">Privacy Policy</a>
+              <a class="btn btn-link" href="terms-and-conditions.html">Terms & Condition</a>
             </div>
           </div>
         </div>
@@ -591,9 +643,9 @@
                 &copy; <a class="border-bottom" href="#">TolgyApp</a>, All Right Reserved.
 
                 <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                <br />
-                Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex.</a>
+
+                Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon.</a>
               </div>
             </div>
           </div>

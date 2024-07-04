@@ -20,8 +20,10 @@
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
             $('.navbar').addClass('sticky-top shadow-sm');
+            $('.btn-social').addClass('btn-outline-dark');
         } else {
             $('.navbar').removeClass('sticky-top shadow-sm');
+            $('.btn-social').removeClass('btn-outline-dark');
         }
     });
 
@@ -137,3 +139,63 @@ function sendMail() {
 
 }
 
+/*Consent banner Cookies */
+
+function acceptCookies() {
+    document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+    loadGoogleAnalytics();
+}
+
+function checkCookies() {
+    return document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='));
+}
+
+function loadGoogleAnalytics() {
+    if (checkCookies()) {
+        // Load Google Analytics script
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-EJW9ELFG6L";
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', "G-EJW9ELFG6L");
+    }
+}
+
+// Check if cookies are accepted and load GA if they are
+function acceptCookies() {
+    document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+    loadGoogleAnalytics();
+}
+
+function checkCookies() {
+    return document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='));
+}
+
+function loadGoogleAnalytics() {
+    if (checkCookies()) {
+        // Load Google Analytics script
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-EJW9ELFG6L";
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', "G-EJW9ELFG6L");
+    }
+}
+
+// Check if cookies are accepted and hide the banner if they are
+if (checkCookies()) {
+    document.getElementById('cookie-banner').style.display = 'none';
+    loadGoogleAnalytics();
+} else {
+    document.getElementById('cookie-banner').style.display = 'block';
+}
