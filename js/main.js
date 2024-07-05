@@ -1,3 +1,6 @@
+import features from "../assets/feature.json" with {type: 'json'};
+
+
 (function ($) {
     "use strict";
 
@@ -166,32 +169,6 @@ function loadGoogleAnalytics() {
     }
 }
 
-// Check if cookies are accepted and load GA if they are
-function acceptCookies() {
-    document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
-    document.getElementById('cookie-banner').style.display = 'none';
-    loadGoogleAnalytics();
-}
-
-function checkCookies() {
-    return document.cookie.split(';').some((item) => item.trim().startsWith('cookies_accepted='));
-}
-
-function loadGoogleAnalytics() {
-    if (checkCookies()) {
-        // Load Google Analytics script
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-EJW9ELFG6L";
-        document.head.appendChild(script);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', "G-EJW9ELFG6L");
-    }
-}
-
 // Check if cookies are accepted and hide the banner if they are
 if (checkCookies()) {
     document.getElementById('cookie-banner').style.display = 'none';
@@ -199,3 +176,26 @@ if (checkCookies()) {
 } else {
     document.getElementById('cookie-banner').style.display = 'block';
 }
+
+
+//Features generator
+
+const template = document.getElementById('template');
+const featureBox = document.getElementById("featureBox")
+
+features.forEach(name => {
+    console.log(name.title);
+    const instance = template.content.cloneNode(true);
+    const featureFrameWithAnimation = instance.querySelector('#featureFrameWithAnimation')
+    const featureName = instance.querySelector('#featureName');
+    const featureIcon = instance.querySelector('#featureIcon')
+
+    featureName.textContent = name.title;
+    featureIcon.classList.add(name.icon)
+    featureFrameWithAnimation.setAttribute('data-wow-delay', name["data-wow-delay"]);
+
+
+    featureBox.appendChild(instance)
+})
+
+

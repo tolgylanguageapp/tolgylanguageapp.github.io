@@ -1,0 +1,33 @@
+[
+    {
+      "title": "Personalized Learning Experience",
+      "data-wow-delay": "0.1s",
+      "icon":"fa-user-graduate"
+    },
+    {
+      "title": "Absolutely Free",
+      "data-wow-delay": "0.3s",
+      "icon":"fa-tag"
+    },
+    {
+      "title": "Exclusive Community Access",
+      "data-wow-delay": "0.5s",
+      "icon":"fa-users"
+    },
+    {
+      "title": "Learn multiple languages in a single app",
+      "data-wow-delay": "0.1s",
+      "icon":"fa-globe"
+    },
+    {
+      "title": "Create your own flashcard decks",
+      "data-wow-delay": "0.3s",
+      "icon":"fa-th-large"
+    },
+    {
+      "title": "Chat with an AI assistant",
+      "data-wow-delay": "0.5s",
+      "icon":"fa-comments"
+    }
+  ]
+
