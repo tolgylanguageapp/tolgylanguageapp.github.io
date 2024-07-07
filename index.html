@@ -49,7 +49,7 @@
     >
       This site uses cookies for analytics and personalized content. By continuing to browse this site, you agree to this use.&nbsp
       <a href="privacy-policy.html">Learn more</a>
-      <button onclick="acceptCookies()" class="btn-privacy-policy rounded-pill">Accept</button>
+      <button id="accept-cookies" class="btn-privacy-policy rounded-pill">Accept</button>
     </div>
     <div class="container-xxl bg-white p-0">
       <!-- Spinner Start -->
@@ -89,9 +89,11 @@
         <div class="container-xxl bg-primary hero-header">
           <div class="container px-lg-5">
             <div class="row g-5">
-              <div class="col-lg-8 text-center text-lg-start">
-                <h1 class="text-white mt-0 mb-2 animated slideInDown">Learn effectively, <coloredText>reach your goals,</coloredText> be proud of yourself</h1>
-                <p class="text-white animated slideInDown fs-7">
+              <div class="col-lg-8 text-center text-lg-start" id="mychu">
+                <h1 class="text-white mt-0 mb-2 animated slideInDown mb-4">
+                  Learn effectively, <coloredTextSecondary>reach your goals,</coloredTextSecondary> be proud of yourself
+                </h1>
+                <p class="text-white animated slideInDown fs-7 pt-3">
                   <!-- Welcome to Tolgy, your personalized language learning app! <br /> -->
                   Your Swiss Army knife
                   <img
@@ -115,6 +117,7 @@
 
                 <!-- Form -->
                 <form
+                  id="registrationForm"
                   action="https://app.convertkit.com/forms/6760321/subscriptions"
                   class="mb-3"
                   method="post"
@@ -125,21 +128,28 @@
                   data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":true},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
                   style="background-color: transparent; border: none; margin: auto; margin: top 1rem"
                 >
-                  <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                  <ul id="alert-error" class="formkit-alert-error-custom" data-element="errors" data-group="alert"></ul>
                   <div class="row gx-2 gy-2 gy-sm-0">
                     <div class="col-12 col-sm mb-2">
                       <input
                         name="email_address"
-                        type="text"
+                        type="email"
+                        aria-label="Email Address"
                         class="form-control form-control-md rounded-pill py-sm-3 h-100 pd-custom"
-                        id="email"
+                        id="email-input"
+                        required
                         placeholder="Your email"
                       />
                       <label for="email" class="sr-only">Your email</label>
                     </div>
 
                     <div class="col-12 col-sm-auto">
-                      <button data-element="submit" class="btn btn-secondary rounded-pill w-100 animated slideInRight px-sm-3 py-sm-3 pd-custom" type="submit">
+                      <button
+                        id="enter-email"
+                        data-element="submit"
+                        class="btn btn-secondary rounded-pill w-100 animated slideInRight px-sm-3 py-sm-3 pd-custom"
+                        type="submit"
+                      >
                         <div class="formkit-spinner">
                           <div></div>
                           <div></div>
@@ -214,37 +224,19 @@
         <div class="container px-lg-5">
           <div class="row g-5 align-items-center">
             <div class="col-lg-6">
-              <h2 class="flash-title wow fadeInLeft" data-wow-delay="0.3s">Be the First to Experience Tolgy</h2>
-              <h2 class="flash-title wow fadeInRight" data-wow-delay="0.5s">Dive right into conversations from day one</h2>
-              <h2 class="flash-title wow fadeInLeft" data-wow-delay="0.3s">Personalized lessons are waiting for you</h2>
-              <h2 class="flash-title wow fadeInRight" data-wow-delay="0.5s">Level up your career, give your brain a workout</h2>
-              <h2 class="flash-title wow fadeInLeft" data-wow-delay="0.3s">Conquer as many languages as you like</h2>
-
-              <div class="row g-4 mb-4">
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                  <div class="d-flex">
-                    <i class="fa fa-cogs fa-2x text-secondary flex-shrink-0 mt-1"></i>
-                    <div class="ms-3">
-                      <h2 class="mb-0" style="color: var(--primary)" data-toggle="counter-up">10000</h2>
-                      <p class="text-primary-gradient mb-0">Flashcards to learn</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                  <div class="d-flex">
-                    <i class="fa fa-comments fa-2x text-secondary flex-shrink-0 mt-1"></i>
-                    <div class="ms-3">
-                      <h2 class="mb-0" style="color: var(--primary)" data-toggle="counter-up">12</h2>
-                      <p class="text-primary-gradient mb-0">Languages to master</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a href="#contact" class="btn btn-secondary py-sm-3 px-4 px-sm-5 rounded-pill mt-sm-3 mt-lg-5 btn-contact">Join now</a>
+              <h2 class="flash-title wow fadeInLeft" data-wow-delay="0.4s"><coloredText> Be the First </coloredText> to Experience Tolgy</h2>
+              <h2 class="flash-title wow fadeInRight" data-wow-delay="0.7s" style="text-align: end">
+                Dive right into <coloredText> conversations from day one</coloredText>
+              </h2>
+              <h2 class="flash-title wow fadeInLeft" data-wow-delay="0.4s"><coloredText>Personalized lessons</coloredText> are waiting for you</h2>
+              <h2 class="flash-title wow fadeInRight" data-wow-delay="0.7s" style="text-align: end">
+                Level up your <coloredText>career</coloredText>, give your brain a <coloredText>workout</coloredText>
+              </h2>
+              <h2 class="flash-title wow fadeInLeft" data-wow-delay="0.4s">
+                <coloredText>Conquer</coloredText> as many <coloredText>languages</coloredText> as you like
+              </h2>
+              <!-- <a href="#contact" class="btn btn-secondary w-75 py-sm-3 px-sm-5 rounded-pill btn-contact pd-custom justify-content-center mx-auto">Join now</a> -->
             </div>
-            <!-- <div class="col-lg-6">
-              <img class="img-fluid wow fadeInUp" data-wow-delay="0.5s" src="img/Screenshot11.jpg" />
-            </div> -->
 
             <div class="col-lg-6 order-1 order-lg-2">
               <div class="image-container">
@@ -257,6 +249,32 @@
         </div>
       </div>
       <!-- About End -->
+
+      <!--Inviting stats-->
+      <!-- <div class="col-lg-6">
+        <div class="row g-4 my-4">
+          <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+            <div class="d-flex">
+              <i class="fa fa-cogs fa-2x text-secondary flex-shrink-0 mt-1"></i>
+              <div class="ms-3">
+                <h2 class="mb-0" style="color: var(--primary)" data-toggle="counter-up">10000</h2>
+                <p class="text-primary-gradient mb-0">Flashcards to learn</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+            <div class="d-flex">
+              <i class="fa fa-comments fa-2x text-secondary flex-shrink-0 mt-1"></i>
+              <div class="ms-3">
+                <h2 class="mb-0" style="color: var(--primary)" data-toggle="counter-up">12</h2>
+                <p class="text-primary-gradient mb-0">Languages to master</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-secondary py-sm-3 px-4 px-sm-5 rounded-pill mt-sm-3 mt-lg-5 btn-contact">Join now</a>
+      </div> -->
+      <!--Inviting stats Ends-->
 
       <!-- 3 Main Powers Start -->
       <div class="container-xxl py-5">

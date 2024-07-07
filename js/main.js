@@ -169,13 +169,22 @@ function loadGoogleAnalytics() {
     }
 }
 
-// Check if cookies are accepted and hide the banner if they are
 if (checkCookies()) {
     document.getElementById('cookie-banner').style.display = 'none';
     loadGoogleAnalytics();
 } else {
     document.getElementById('cookie-banner').style.display = 'block';
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (checkCookies()) {
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadGoogleAnalytics();
+    } else {
+        document.getElementById('cookie-banner').style.display = 'block';
+        document.getElementById('accept-cookies').addEventListener('click', acceptCookies);
+    }
+});
 
 
 //Features generator
@@ -197,5 +206,6 @@ features.forEach(name => {
 
     featureBox.appendChild(instance)
 })
+
 
 
